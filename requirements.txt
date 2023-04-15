@@ -3,5 +3,3 @@ Flask-SocketIO
 jellyfish       
 gunicorn
 websockets
-eventlet
-gevent-websocket 
