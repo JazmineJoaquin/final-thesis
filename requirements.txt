@@ -2,3 +2,4 @@ Flask
 Flask-SocketIO   
 jellyfish       
 gunicorn
+websockets
