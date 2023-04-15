@@ -17,12 +17,8 @@ import websockets
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'hjhjsdahhds!'
-app.config['PUSHER_APP_ID'] = '1584902'
-app.config['PUSHER_KEY'] = '4df22a4b09cc4de81216'
-app.config['PUSHER_SECRET'] = '3494effaaad6ac02ce94'
-app.config['PUSHER_CLUSTER'] = 'mt1'
-socketio = SocketIO(app, async_mode='eventlet', engineio_logger=True, cors_allowed_origins="*")
+app.config["SECRET_KEY"] = "hjhjsdahhds"
+socketio = SocketIO(app)
 
 if __name__ == '__main__':
     socketio.run(app)
