@@ -12,8 +12,7 @@ from try_again import leet_conver
 from try_again import analytics
 import time
 import asyncio
-from gevent import monkey
-monkey.patch_all()
+
 
 
 
@@ -147,5 +146,5 @@ def disconnect():
 
 if __name__ == "__main__":
         socketio.run(app, debug=True)
-        socketio = SocketIO(app, async_mode='gevent', websocket_class=WebSocketHandler)
+        socketio = SocketIO(app, async_mode='gevent')
     
