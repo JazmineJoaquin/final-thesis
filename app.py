@@ -143,4 +143,4 @@ def disconnect():
 
 if __name__ == "__main__":
     socketio.run(app, debug=True)
-    socketio = SocketIO(app, async_mode='gevent')
+    socketio = SocketIO(app, async_mode='gevent', logger=True, engineio_logger=True)
