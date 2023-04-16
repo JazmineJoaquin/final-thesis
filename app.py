@@ -13,8 +13,8 @@ from try_again import analytics
 import time
 import asyncio
 import websockets
-from gevent import monkey
-monkey.patch_all()
+from geventwebsocket.handler import WebSocketHandler
+
 
 
 
@@ -146,4 +146,4 @@ def disconnect():
 
 if __name__ == "__main__":
     socketio.run(app, debug=True)
-    socketio = SocketIO(app, async_mode='gevent', logger=True, engineio_logger=True)
+    socketio = SocketIO(app, async_mode='gevent', websocket_class=WebSocketHandler)
