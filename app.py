@@ -21,7 +21,7 @@ from geventwebsocket.handler import WebSocketHandler
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "secret!"
-socketio = SocketIO(app, async_mode='gevent')
+socketio = SocketIO(app, async_mode='gevent', websocket_class=WebSocketHandler)
 
 if __name__ == '__main__':
     socketio.run(app)
@@ -147,3 +147,4 @@ def disconnect():
 if __name__ == "__main__":
     socketio.run(app, debug=True)
     socketio = SocketIO(app, async_mode='gevent', websocket_class=WebSocketHandler)
+    
