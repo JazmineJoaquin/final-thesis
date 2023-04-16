@@ -12,8 +12,8 @@ from try_again import leet_conver
 from try_again import analytics
 import time
 import asyncio
-from geventwebsocket.handler import WebSocketHandler
-from gevent.pywsgi import WSGIServer
+from gevent import monkey
+monkey.patch_all()
 
 
 
