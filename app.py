@@ -12,7 +12,6 @@ from try_again import leet_conver
 from try_again import analytics
 import time
 import asyncio
-import websockets
 from geventwebsocket.handler import WebSocketHandler
 
 
