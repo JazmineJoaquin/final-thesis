@@ -25,7 +25,7 @@ app.config["SECRET_KEY"] = "secret!"
 socketio = SocketIO(app, async_mode='gevent')
 
 if __name__ == '__main__':
-     http_server = WSGIServer(('0.0.0.0', 5000), app, handler_class=WebSocketHandler)
+    http_server = WSGIServer(('0.0.0.0', 5000), app, handler_class=WebSocketHandler)
     socketio.run(http_server)
 
 rooms = {}
@@ -147,7 +147,7 @@ def disconnect():
 
 
 if __name__ == "__main__":
-     http_server = WSGIServer(('0.0.0.0', 5000), app, handler_class=WebSocketHandler)
+    http_server = WSGIServer(('0.0.0.0', 5000), app, handler_class=WebSocketHandler)
     socketio.run(http_server)
     socketio = SocketIO(app, async_mode='gevent', websocket_class=WebSocketHandler)
     
