@@ -3,5 +3,5 @@ jellyfish
 gunicorn
 websockets
 Flask-SocketIO
-gevent==21.12.0
-gevent-websocket==0.10.1
+gevent
+gevent-websocket
