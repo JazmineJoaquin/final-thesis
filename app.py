@@ -13,6 +13,8 @@ from try_again import analytics
 import time
 import asyncio
 from geventwebsocket.handler import WebSocketHandler
+from gevent.pywsgi import WSGIServer
+
 
 
 
@@ -20,10 +22,11 @@ from geventwebsocket.handler import WebSocketHandler
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "secret!"
-socketio = SocketIO(app, async_mode='gevent', websocket_class=WebSocketHandler)
+socketio = SocketIO(app, async_mode='gevent')
 
 if __name__ == '__main__':
-    socketio.run(app)
+     http_server = WSGIServer(('0.0.0.0', 5000), app, handler_class=WebSocketHandler)
+    socketio.run(http_server)
 
 rooms = {}
 
@@ -144,6 +147,7 @@ def disconnect():
 
 
 if __name__ == "__main__":
-    socketio.run(app, debug=True)
+     http_server = WSGIServer(('0.0.0.0', 5000), app, handler_class=WebSocketHandler)
+    socketio.run(http_server)
     socketio = SocketIO(app, async_mode='gevent', websocket_class=WebSocketHandler)
     
