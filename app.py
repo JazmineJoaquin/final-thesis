@@ -13,6 +13,8 @@ from try_again import analytics
 import time
 import asyncio
 import websockets
+from gevent import monkey
+monkey.patch_all()
 
 
 
