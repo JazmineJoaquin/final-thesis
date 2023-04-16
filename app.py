@@ -21,7 +21,7 @@ from geventwebsocket.handler import WebSocketHandler
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "secret!"
-socketio = SocketIO(app)
+socketio = SocketIO(app, async_mode='gevent')
 
 if __name__ == '__main__':
     socketio.run(app)
