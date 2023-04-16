@@ -1,6 +1,7 @@
-Flask           
-Flask-SocketIO   
+Flask            
 jellyfish       
 gunicorn
 websockets
-gevent-websocket
+Flask-SocketIO==5.4.0
+gevent==21.12.0
+gevent-websocket==0.10.1
